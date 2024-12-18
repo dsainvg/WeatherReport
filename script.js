@@ -30,7 +30,7 @@ async function fetchData(url) {
         const response = await fetch(url);
        
         let data = await response.json();
-        console.log(data)
+
         return data;
 }
 
@@ -39,28 +39,35 @@ let place = 'nyc'
 searchBtn.addEventListener("click",function(){
     const City = document.getElementById('city')
     place = "https://api.weatherapi.com/v1/forecast.json?key=c69fa4b9628b4c03a2d61709241512&q="+City.value+"&days=10&aqi=no&alerts=no"
-    console.log(place)
+
     search(place)
 })
 
 async function search(plac){
     dataret =await fetchData(plac)
-    isDay = await dataret.current.is_day
-    if (isDay===1){
-        document.body.classList.add('lytmode')
-    }
-    else{document.body.classList.remove('lytmode')}
+    
+    const err = document.getElementById('error')
     try{
-        const err = document.getElementById('error')
-        df = await dataret.error
-        err.innerHTML = `<h1>This City Not Found</h1><h2> Enter a Valid City</h2>`
-    }
+        df = await dataret.error.code
+        if(df>1){
+        err.innerHTML = `<h1>This City Not Found</h1><h2> Enter a Valid City</h2>`}}
     catch(error){}
-    locat(dataret.location)
-    currentData(dataret.current)
-    today(dataret.forecast)
-    Tomorrow(dataret.forecast,dayin,timein)
-    hourly(dataret.forecast,dataret.location)
+    
+        locat(dataret.location)
+        currentData(dataret.current)
+        today(dataret.forecast)
+        Tomorrow(dataret.forecast,dayin,timein)
+        hourly(dataret.forecast,dataret.location)
+        isDay = await dataret.current.is_day
+        if (isDay===1){
+            document.body.classList.add('lytmode')
+            err.innerHTML = ``
+        }
+        else{document.body.classList.remove('lytmode')
+            err.innerHTML = ``
+        }
+    
+
     
     
     
@@ -128,8 +135,8 @@ async function today(forecast) {
                                 <h2>${fSitu}</h2>
                             </div>
                             <div class="today-info3">
-                                <h5>Precipitation : ${fPresp}</h5>
-                                <h6>Probability of Precipitation : ${fPrespProb}</h6>
+                                <h5>Precipitation : ${fPresp}mm</h5>
+                                <h6>Probability of Precipitation : ${fPrespProb}%</h6>
                             </div>
                             <div class="today-info3">
                                 <h6>Sun Rise : ${fSunRise}</h6>
@@ -137,8 +144,8 @@ async function today(forecast) {
                                 <h6>Sun Set : ${fSunSet}</h6>
                             </div> 
                             <div class="today-info3">
-                                <h5>Humidity : ${fHum}</h5>
-                                <h5>Wind Speed : ${fWindSpeed}</h5>
+                                <h5>Humidity : ${fHum}%</h5>
+                                <h5>Wind Speed : ${fWindSpeed}Kmph</h5>
                             </div>`
 }
 function width(){
@@ -214,8 +221,8 @@ async function Tomorrow(forecast,i,y) {
                                         <h2>${tfSitu}</h2>
                                     </div>
                                     <div class="today-info3">
-                                        <h5>Precipitation : ${tfPresp}</h5>
-                                        <h6>Probability of Precipitation : ${tfPrespProb}</h6>
+                                        <h5>Precipitation : ${tfPresp}mm</h5>
+                                        <h6>Probability of Precipitation : ${tfPrespProb}%</h6>
                                     </div>
                                     <div class="today-info3">
                                         <h6>Sun Rise : ${tfSunRise}</h6>
@@ -223,8 +230,8 @@ async function Tomorrow(forecast,i,y) {
                                         <h6>Sun Set : ${tfSunSet}</h6>
                                     </div> 
                                     <div class="today-info3">
-                                        <h5>Humidity : ${tfHum}</h5>
-                                        <h5>Wind Speed : ${tfWindSpeed}</h5>
+                                        <h5>Humidity : ${tfHum}%</h5>
+                                        <h5>Wind Speed : ${tfWindSpeed}Kmph</h5>
                                     </div>`
         }
         else{
@@ -239,8 +246,8 @@ async function Tomorrow(forecast,i,y) {
                                     <h2>${tfSitu}</h2>
                                 </div>
                                 <div class="today-info3">
-                                    <h5>Precipitation : ${tfPresp}</h5>
-                                    <h6>Probability of Precipitation : ${tfPrespProb}</h6>
+                                    <h5>Precipitation : ${tfPresp}mm</h5>
+                                    <h6>Probability of Precipitation : ${tfPrespProb}%</h6>
                                 </div>
                                 <div class="today-info3">
                                     <h6>Sun Rise : ${tfSunRise}</h6>
@@ -248,8 +255,8 @@ async function Tomorrow(forecast,i,y) {
                                     <h6>Sun Set : ${tfSunSet}</h6>
                                 </div> 
                                 <div class="today-info3">
-                                    <h5>Humidity : ${tfHum}</h5>
-                                    <h5>Wind Speed : ${tfWindSpeed}</h5>
+                                    <h5>Humidity : ${tfHum}%</h5>
+                                    <h5>Wind Speed : ${tfWindSpeed}Kmph</h5>
                                 </div>`
         }
     }
@@ -275,8 +282,8 @@ async function Tomorrow(forecast,i,y) {
                                         <h2>${tfSitu}</h2>
                                     </div>
                                     <div class="today-info3">
-                                        <h5>Precipitation : ${tfPresp}</h5>
-                                        <h6>Probability of Precipitation : ${tfPrespProb}</h6>
+                                        <h5>Precipitation : ${tfPresp}mm</h5>
+                                        <h6>Probability of Precipitation : ${tfPrespProb}%</h6>
                                     </div>
                                     <div class="today-info3">
                                         <h6>Sun Rise : ${tfSunRise}</h6>
@@ -284,8 +291,8 @@ async function Tomorrow(forecast,i,y) {
                                         <h6>Sun Set : ${tfSunSet}</h6>
                                     </div> 
                                     <div class="today-info3">
-                                        <h5>Humidity : ${tfHum}</h5>
-                                        <h5>Wind Speed : ${tfWindSpeed}</h5>
+                                        <h5>Humidity : ${tfHum}%</h5>
+                                        <h5>Wind Speed : ${tfWindSpeed}Kmph</h5>
                                     </div>
                                     <div class="today-info4">
                                         <h2>Hour : ${tfh}</h2>
@@ -298,12 +305,12 @@ async function Tomorrow(forecast,i,y) {
                                         <h2>${tfhSitu}</h2>
                                     </div>
                                     <div class="today-info3">
-                                        <h6>Precipitation :${tfhPrecp}</h6>
-                                        <h6>Probability of Precipitation :${tfhPrecpProb}</h6>
+                                        <h6>Precipitation :${tfhPrecp}mm</h6>
+                                        <h6>Probability of Precipitation :${tfhPrecpProb}%</h6>
                                     </div> 
                                     <div class="today-info3">
-                                        <h5>Humidity : ${tfhHum}</h5>
-                                        <h5>Wind Speed : ${tfhWindSpeed}</h5>
+                                        <h5>Humidity : ${tfhHum}%</h5>
+                                        <h5>Wind Speed : ${tfhWindSpeed}Kmph</h5>
                                     </div>`
         }
         else{
@@ -318,8 +325,8 @@ async function Tomorrow(forecast,i,y) {
                                     <h2>${tfSitu}</h2>
                                 </div>
                                 <div class="today-info3">
-                                    <h5>Precipitation : ${tfPresp}</h5>
-                                    <h6>Probability of Precipitation : ${tfPrespProb}</h6>
+                                    <h5>Precipitation : ${tfPresp}mm</h5>
+                                    <h6>Probability of Precipitation : ${tfPrespProb}%</h6>
                                 </div>
                                 <div class="today-info3">
                                     <h6>Sun Rise : ${tfSunRise}</h6>
@@ -327,8 +334,8 @@ async function Tomorrow(forecast,i,y) {
                                     <h6>Sun Set : ${tfSunSet}</h6>
                                 </div> 
                                 <div class="today-info3">
-                                    <h5>Humidity : ${tfHum}</h5>
-                                    <h5>Wind Speed : ${tfWindSpeed}</h5>
+                                    <h5>Humidity : ${tfHum}%</h5>
+                                    <h5>Wind Speed : ${tfWindSpeed}Kmph</h5>
                                 </div>
                                 <div class="today-info4">
                                         <h2>Hour : ${tfh}</h2>
@@ -341,12 +348,12 @@ async function Tomorrow(forecast,i,y) {
                                         <h2>${tfhSitu}</h2>
                                     </div>
                                     <div class="today-info3">
-                                        <h6>Precipitation :${tfhPrecp}</h6>
-                                        <h6>Probability of Precipitation :${tfhPrecpProb}</h6>
+                                        <h6>Precipitation :${tfhPrecp}mm</h6>
+                                        <h6>Probability of Precipitation :${tfhPrecpProb}%</h6>
                                     </div> 
                                     <div class="today-info3">
-                                        <h5>Humidity : ${tfhHum}</h5>
-                                        <h5>Wind Speed : ${tfhWindSpeed}</h5>
+                                        <h5>Humidity : ${tfhHum}%</h5>
+                                        <h5>Wind Speed : ${tfhWindSpeed}Kmph</h5>
                                     </div>`
         }
     }
@@ -384,13 +391,13 @@ async function hourly(hdata,tdata) {
         hourdata[0].innerHTML = `<h2>This Hour</h2>
                                 <h2>Temp : ${hTemp}</h4>
                                 <h2>${hSitu}</h2>
-                                <h4>Precipitation : ${hPrec}</h4>
-                                <h4>Humidity : ${hHum}</h4>`
+                                <h4>Precipitation : ${hPrec}mm</h4>
+                                <h4>Humidity : ${hHum}%</h4>`
         hourdata[1].innerHTML = `<h2>Next Hour</h2>
                                 <h2>Temp : ${hTemp1}</h4>
                                 <h2>${hSitu1}</h2>
-                                <h4>Precipitation : ${hPrec1}</h4>
-                                <h4>Humidity : ${hHum1}</h4>`
+                                <h4>Precipitation : ${hPrec1}mm</h4>
+                                <h4>Humidity : ${hHum1}%</h4>`
 }
 
 
@@ -400,7 +407,7 @@ function getDayOfWeek() {
     const dayIndex = dateString.getDay();
     return dayIndex;
 }
-console.log(getDayOfWeek())
+
 width1()
 function width1(){
     const i = getDayOfWeek()
