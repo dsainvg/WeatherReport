@@ -1,0 +1,94 @@
+.hours{
+    display: flex;
+
+}
+.hourhead{
+    text-align: center;
+    font-size: x-large;
+}
+
+.hourhead h1{
+    margin:0 5vw;
+    padding: 1vw;
+    border: 0;
+    border-bottom: 0.15vw dashed var(--fcol);
+}
+.hourforecast{
+    flex:1;
+    padding: 3vw;
+    font-size: large;
+}
+
+.hourforecast h2{
+    font-weight: 400;
+    padding: 1.2vw;
+}
+
+
+.hourforecast h4{
+    font-size: medium;
+    font-weight: 400;
+    padding: 1.2vw;
+}
+.date-selector button,
+.selbtn1,
+.selbtn,
+.time-selector1,
+.time-selector{
+    background-color: var(--bseccol);
+    color: var(--fseccol);
+    font-weight: bold;
+    padding:0.5vw 1vw;
+    margin-left: 0.5dvw;
+    transition: 0.5s;
+}
+
+.time-selector{
+    margin:1vw;
+}
+.selbtn1,
+.selbtn{
+    margin: 1.5vw;
+    padding: 0.5vw 2vw;
+    border: 0;
+    border-radius: 0.5vw;
+    font-size: large;
+    
+}
+
+.date-select1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+}
+
+.date-selector button{
+    border: 0;
+    padding: 1vw 2vw;
+    border-radius: 1vw;
+}
+
+.date-selector button:hover{
+    background-color: var(--bcol);
+    color: var(--fcol);
+}
+
+.selbtn1:hover,
+.selbtn:hover{
+    cursor: pointer;
+    background-color: var(--bcol);
+    color: var(--fcol);
+    border: 0.1vw solid var(--fcol);
+    padding: 0.5vw 4vw;
+    border-radius: 2vw;
+}
+
+.time-selector1:hover,
+.time-selector:hover{
+    background-color: var(--bcol);
+    color: var(--fcol);
+    border: 0.1vw solid var(--fcol);
+    padding: 0.5vw 2.5vw;
+    border-radius: 1vw; 
+}

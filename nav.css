@@ -1,0 +1,91 @@
+nav{
+    margin: 0;
+    color: var(--fcol);
+    background-color: var(--bcol);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: xx-large;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.navbtn{
+    background-color: var(--bseccol);
+    color: var(--fcol);
+    padding:1vw 2vw;
+    border-radius: 1vw;
+    border: 0;
+    transition: 0.3s;
+}
+.navbtn:hover{
+    cursor: pointer;
+}
+
+.divofnavbtn{
+    margin: 0 3dvw;
+}
+
+.btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logoimg{
+    padding:0 2vw;
+}
+
+.hamburgermenu button{
+    background-color: inherit;
+    border: 0;
+    padding-right: 3vw;
+}
+
+.hamburger-menu-but{
+    fill: var(--fcol);
+    background-color: var(--bcol);
+    border-radius: 20px;
+}
+
+.navlistbtns{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--bcol);
+    z-index: 3;
+    font-size: medium;
+    position: fixed;
+    width: fit-content;
+    top: 4vw;
+    left: auto;
+    right: 1vw;
+}
+.divofnavbtn1{
+    display: inline-block;
+    padding: 7vw;
+}
+
+.navbtn:hover{
+    cursor: pointer;
+    background-color: var(--bcol);
+    color: var(--fcol);
+    border: 0.1vw solid var(--fcol);
+    padding: 1.1vw 3.5vw;
+}
+
+@media screen and (max-width: 800px) {
+    .navlistbtns{
+        top:7vw;
+    }
+    
+}

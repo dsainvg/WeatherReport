@@ -1,0 +1,102 @@
+.Current{
+    margin:2vw 4vw;
+    padding: 1vw;
+    border: 0; 
+    font-size: x-large; 
+    text-align: center;   
+}
+
+.Current h1{
+    padding: 1vw;
+}
+
+.current-info{
+    border: 0;
+    border-top: 0.11vw;
+    border-style: dashed;
+    border-color: var(--fcol);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.current-info1{
+    flex:50%;
+}
+
+.current-info2{
+    flex:50%;}
+
+.current-info1 p{
+    font-size: x-small;
+    text-align: left;
+    padding: 0vw;
+    position: relative;
+    left: 1vw;
+    bottom: 0.25vw;
+}
+.current-info1 h1{
+    font-weight: 400;
+    font-size: xx-large;
+    padding: 3vw 0;
+    
+}
+.current-info1 h4{
+    font-weight: 400;
+    padding: 1vw 0;
+}
+
+.current-info2 h4{
+    font-weight: 400;
+    padding: 1vw 0;
+}
+
+.current-info2 h2{
+    font-weight: 600;
+    font-size: xx-large;
+    padding: 3.2vw 0;
+}
+
+.current-info2 h6{
+    font-weight: 350;
+    padding: 1vw 0;
+}
+
+.today-temp{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 0;
+    border-top: 0.11vw;
+    border-style: dashed;
+    border-color: var(--fcol);
+    padding: 1vw;
+}
+
+.today-info2{
+    padding: 2vw;
+    font-size: large;
+}
+
+.today-info3{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1.4vw 0;
+}
+
+.today-temp h5{
+    font-weight: 400;
+}
+
+.today-info2 h2{
+    font-weight: 650;
+}
+
+.today-info3 h6{
+    font-weight: 400;
+}
+
+.today-info3 h5{
+    font-weight: 400;
+}
