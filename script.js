@@ -40,7 +40,6 @@ function searchinginprocess(){
             searchCity()
         }
     })
-    console.log('searching')
 }
 
 let place = 'nyc'
