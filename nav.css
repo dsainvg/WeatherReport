@@ -1,0 +1,122 @@
+nav{
+    margin: 0;
+    color: var(--fcol);
+    background-color: var(--bcol);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: xx-large;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.navscroll{
+    display: none;
+
+}
+
+.navbtn{
+    background-color: var(--bsec2col);
+    color: var(--fcol);
+    padding:1vw 2vw;
+    border-radius: 1vw;
+    border: 0;
+    transition: 0.3s;
+}
+.navbtn:hover{
+    cursor: pointer;
+    background-color: var(--fcol);
+    color: var(--bsec2col);
+}
+
+.divofnavbtn{
+    margin: 0 3dvw;
+}
+
+.btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logoimg{
+    padding:0 2vw;
+}
+
+.hamburger-menu-but{
+    height: 5dvw;
+    width: 5dvw;
+    fill: var(--fcol);
+    background-color: var(--bcol);
+}
+.hamburgermenu button{
+    background-color: inherit;
+    border: 0;
+    padding-right: 3vw;
+}
+
+.hamburger-menu-but{
+    fill: var(--fcol);
+    background-color: var(--bcol);
+    border-radius: 20px;
+}
+
+.navlistbtns{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    background-color: var(--bsec2col);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 5vw;
+    border-top-right-radius: 2.5vw;
+    border-bottom-right-radius: 2.5vw;
+    padding: 2vw;
+    z-index: 3;
+    font-size: medium;
+    position: fixed;
+    width: fit-content;
+    top: 5.5vw;
+    left: auto;
+    right: 1vw;
+}
+
+.cloudicon{
+    fill: var(--fcol);
+}
+
+
+.divofnavbtn1{
+    display: inline-block;
+    padding-top: 1.8vw;
+    padding-right: 3vw;
+    padding-left: 3vw;
+}
+
+.navbtn:hover{
+    cursor: pointer;
+    background-color: var(--bcol);
+    color: var(--fcol);
+}
+
+@media screen and (max-width: 800px) {
+    .navlistbtns{
+        top:7vw;
+    }
+    
+}
+
+@media screen and (max-width: 800px) {
+    .logoimg{
+        width: 200%;
+    }
+}

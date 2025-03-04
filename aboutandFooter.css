@@ -1,0 +1,52 @@
+.about{
+    border-top: 0.15vw;
+    border-bottom: 0.15vw;
+    border-left: 0;
+    border-right: 0;
+    border-style: dashed;
+    border-color: var(--fcol);
+    padding: 1vw;
+    margin: 1vw;
+}
+.logoabout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+}
+
+.logoimgabout{
+    padding:0 2vw;
+}
+
+.about-text{
+    text-indent: 10vw;
+    text-align: justify;
+}
+.social-media{
+    padding: 2vw;
+    margin: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-link{
+    color: var(--fcol);
+    text-align: center;
+    font-size: large;
+    padding: 0.5vw;
+}
+.footer-links-box a {
+    text-decoration: none; 
+}
+.footer-links-box{
+    padding-bottom: 3vw;  
+}
+.svgfillfooter{
+    fill: var(--fcol);
+}
+
+.svgfillfooter:hover{
+        fill: var(--bsec2col);
+        background-color: var(--fcol);   
+}
