@@ -21,7 +21,7 @@ function celtofar(){
         isCelBtn.innerHTML = "Fahrenheit"
     }
     const City = document.getElementById('city')
-    place = "https://api.weatherapi.com/v1/forecast.json?key=1f1c2e0b17bd45daaa6130635250403&q="+City.value+"&days=8&aqi=no&alerts=no"
+    place = "https://api.weatherapi.com/v1/forecast.json?key=1f1c2e0b17bd45daaa6130635250403&q="+City.value+"&days=10&aqi=no&alerts=no"
     search(place)
 }
 width()
@@ -46,7 +46,7 @@ function searchinginprocess(){
 let place = 'nyc'
 function searchCity(){
     const City = document.getElementById('city')
-    place = "https://api.weatherapi.com/v1/forecast.json?key=1f1c2e0b17bd45daaa6130635250403&q="+City.value+"&days=8&aqi=no&alerts=no"
+    place = "https://api.weatherapi.com/v1/forecast.json?key=1f1c2e0b17bd45daaa6130635250403&q="+City.value+"&days=10&aqi=no&alerts=no"
     search(place)
 }
 
